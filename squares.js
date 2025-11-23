@@ -39,6 +39,13 @@ function addSquare() {
     var areaWidth=700;
     var areaHeight=300;
 
+    newSquare.onclick = function(){
+        var currentZ = parseInt(newSquare.style.zIndex) || 0;
+        squarearea.appendChild(newSquare);
+    }
+
+    
+
     newSquare.className="square";
     newSquare.style.left = parseInt(Math.random()*651)+"px";
     newSquare.style.top = parseInt(Math.random()*251)+"px";
