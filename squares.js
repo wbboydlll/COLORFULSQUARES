@@ -39,17 +39,27 @@ function addSquare() {
     var areaWidth=700;
     var areaHeight=300;
 
+    var maxLeft = areaWidth - size;
+    var maxTop = areaHeight - size;
+
+    newSquare.style.left = parseInt(Math.random()* (maxLeft + 1)) + "px";
+    newSquare.style.top = parseInt(Math.random()* (maxtop + 1)) + "px";
+    newSquare.style.backgroundColor = getRandomColor();
+
     newSquare.onclick = function(){
         var currentZ = parseInt(newSquare.style.zIndex) || 0;
+        if (currentZ !== maxZ){
+            maxZ++;
+            newSquare.style.zIndex= maxZ;
+        }else{
+            squarearea.removeChild(newSquare);
+        }
         squarearea.appendChild(newSquare);
     }
-
-    
 
     newSquare.className="square";
     newSquare.style.left = parseInt(Math.random()*651)+"px";
     newSquare.style.top = parseInt(Math.random()*251)+"px";
-    newSquare.style.backgroundColor = getRandomColor();
     squarearea.appendChild(newSquare);
 
 }
