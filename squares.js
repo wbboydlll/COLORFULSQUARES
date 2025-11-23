@@ -36,6 +36,9 @@ function addSquare() {
     newSquare.style.width = size+"px";
     newSquare.style.height = size+"px";
     
+    var areaWidth=700;
+    var areaHeight=300;
+
     newSquare.className="square";
     newSquare.style.left = parseInt(Math.random()*651)+"px";
     newSquare.style.top = parseInt(Math.random()*251)+"px";
